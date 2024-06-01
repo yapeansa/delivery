@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const CampoTexto = styled.input`
     width: 100%;
@@ -15,6 +15,6 @@ const CampoTexto = styled.input`
         opacity: 1;
         color: #fff;
     }
-`
+`;
 
-export default CampoTexto
+export default CampoTexto;

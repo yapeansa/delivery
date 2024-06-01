@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Botao = styled.input`
     padding: 1.2rem 1.9rem;
@@ -13,6 +13,6 @@ const Botao = styled.input`
         background: #8A2BE2;
         color: #fff;
     }
-`
+`;
 
-export default Botao
+export default Botao;

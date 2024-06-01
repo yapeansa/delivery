@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const CardEnderecoContainer = styled.div`
     display: flex;
@@ -8,7 +8,7 @@ const CardEnderecoContainer = styled.div`
     gap: 1rem;
     max-width: 600px;
     margin: 3rem auto 0;
-`
+`;
 
 const CardEndereco = styled.div`
     padding: 1rem;
@@ -71,6 +71,6 @@ const CardEndereco = styled.div`
             'botao2';
         }
     }
-`
+`;
 
-export { CardEnderecoContainer, CardEndereco }
+export { CardEnderecoContainer, CardEndereco };

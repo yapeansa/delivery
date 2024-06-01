@@ -1,64 +1,64 @@
-import { useContext, useState } from "react"
-import { ContextoEnderecos } from "../../contexts/enderecos"
-import { v4 as uuidv4 } from 'uuid'
-import TituloPrincipal from "../../components/TituloPrincipal"
-import CampoTexto from "../../components/CampoTexto"
-import Formulario from "../../components/Formulario"
-import Botao from "../../components/Botao"
-import { CardEndereco, CardEnderecoContainer } from "../../components/CardEndereco"
-import { useNavigate } from "react-router-dom"
-import minimap from "../../assets/minimap.jpg"
+import { useContext, useState } from "react";
+import { ContextoEnderecos } from "../../contexts/enderecos";
+import { v4 as uuidv4 } from 'uuid';
+import TituloPrincipal from "../../components/TituloPrincipal";
+import CampoTexto from "../../components/CampoTexto";
+import Formulario from "../../components/Formulario";
+import Botao from "../../components/Botao";
+import { CardEndereco, CardEnderecoContainer } from "../../components/CardEndereco";
+import { useNavigate } from "react-router-dom";
+import minimap from "../../assets/minimap.jpg";
 
 const Cadastro = () => {
 
-    const [enderecos, setEnderecos] = useContext(ContextoEnderecos)
+    const [enderecos, setEnderecos] = useContext(ContextoEnderecos);
 
-    const [placeHolder, setPlaceHolder] = useState('Digite Cidade, País / Lote...')
+    const [placeHolder, setPlaceHolder] = useState('Digite Cidade, País / Lote...');
 
-    const [nome, setNome] = useState('')
+    const [nome, setNome] = useState('');
 
-    const navegar = useNavigate()
+    const navegar = useNavigate();
 
     const handleInput = (nomeEndereco) => {
         setNome(nomeEndereco)
-    }
+    };
 
     const handleCadastro = (e) => {
-        e.preventDefault()
-        const pegaLista = JSON.parse(localStorage.getItem("listaEnderecos")) || []
+        e.preventDefault();
+        const pegaLista = JSON.parse(localStorage.getItem("listaEnderecos")) || [];
         const novoEndereco = {
             id: uuidv4(),
             nome: nome
-        }
-        localStorage.setItem("listaEnderecos", JSON.stringify([...pegaLista, novoEndereco]))
-        setEnderecos([...pegaLista, novoEndereco])
-        e.target.reset()
-    }
+        };
+        localStorage.setItem("listaEnderecos", JSON.stringify([...pegaLista, novoEndereco]));
+        setEnderecos([...pegaLista, novoEndereco]);
+        e.target.reset();
+    };
 
     const defineAlvo = (objId) => {
-        const objeto = JSON.parse(localStorage.getItem("listaEnderecos"))
-        const objetoAlvo = objeto.find(item => item.id === objId)
-        localStorage.setItem("alteracao", JSON.stringify(objetoAlvo))
-    }
+        const objeto = JSON.parse(localStorage.getItem("listaEnderecos"));
+        const objetoAlvo = objeto.find(item => item.id === objId);
+        localStorage.setItem("alteracao", JSON.stringify(objetoAlvo));
+    };
 
     const chamada = (id) => {
-        defineAlvo(id)
-        navegar("/editar")
-    }
+        defineAlvo(id);
+        navegar("/editar");
+    };
 
     const chamadaExclusao = (id) => {
-        defineAlvo(id)
-        const alterandoAtual = JSON.parse(localStorage.getItem("alteracao"))
-        const alvo = JSON.parse(localStorage.getItem("listaEnderecos"))
-        const indice = alvo.findIndex((item) => item.id === alterandoAtual.id)
-        alvo.splice(indice, 1)
-        localStorage.setItem("listaEnderecos", JSON.stringify(alvo))
-        setEnderecos([...alvo])
-    }
+        defineAlvo(id);
+        const alterandoAtual = JSON.parse(localStorage.getItem("alteracao"));
+        const alvo = JSON.parse(localStorage.getItem("listaEnderecos"));
+        const indice = alvo.findIndex((item) => item.id === alterandoAtual.id);
+        alvo.splice(indice, 1);
+        localStorage.setItem("listaEnderecos", JSON.stringify(alvo));
+        setEnderecos([...alvo]);
+    };
 
     const handlePlaceHolder = () => {
-        placeHolder !== '' ? setPlaceHolder('') : setPlaceHolder('Digite Cidade, País / Lote...')
-    }
+        placeHolder !== '' ? setPlaceHolder('') : setPlaceHolder('Digite Cidade, País / Lote...');
+    };
 
     return (
         <>
@@ -93,7 +93,7 @@ const Cadastro = () => {
                 )}
             </CardEnderecoContainer>
         </>
-    )
-}
+    );
+};
 
-export default Cadastro
+export default Cadastro;

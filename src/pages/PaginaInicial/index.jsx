@@ -1,12 +1,11 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 const PaginaInicial = () => {
-
     return (
         <>
             <Outlet />
         </>
-    )
-}
+    );
+};
 
-export default PaginaInicial
+export default PaginaInicial;

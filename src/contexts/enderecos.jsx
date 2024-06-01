@@ -1,18 +1,18 @@
-import { createContext, useState } from "react"
+import { createContext, useState } from "react";
 
-export const ContextoEnderecos = createContext()
+export const ContextoEnderecos = createContext();
 
 const EnderecosComponente = ({ children }) => {
 
-    const estadoInicial = JSON.parse(localStorage.getItem("listaEnderecos")) || []
+    const estadoInicial = JSON.parse(localStorage.getItem("listaEnderecos")) || [];
 
-    const [enderecos, setEnderecos] = useState(estadoInicial)
+    const [enderecos, setEnderecos] = useState(estadoInicial);
 
     return (
         <ContextoEnderecos.Provider value={[enderecos, setEnderecos]}>
             {children}
         </ContextoEnderecos.Provider>
-    )
-}
+    );
+};
 
-export default EnderecosComponente
+export default EnderecosComponente;

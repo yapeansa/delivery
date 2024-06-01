@@ -16,6 +16,6 @@ const EstilosGlobais = createGlobalStyle`
         background: url(${solar}) center / cover no-repeat fixed;
         color: #fff;
     }
-`
+`;
 
-export default EstilosGlobais
+export default EstilosGlobais;

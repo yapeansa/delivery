@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const ContainerEstilizado = styled.div`
     max-width: 100%;
@@ -16,7 +16,7 @@ const ContainerEstilizado = styled.div`
     @media screen and (max-width: 600px) {
         padding: 2rem 1.5rem;
     }
-`
+`;
 
 const Container = ({ children }) => {
     return (
@@ -26,6 +26,6 @@ const Container = ({ children }) => {
             </main>
         </ContainerEstilizado>
     )
-}
+};
 
-export default Container
+export default Container;

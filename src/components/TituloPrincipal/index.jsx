@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const TituloPrincipal = styled.h1`
     text-align: center;
@@ -15,6 +15,6 @@ const TituloPrincipal = styled.h1`
         background: #8A2BE2;
         height: 3px;
     }
-`
+`;
 
-export default TituloPrincipal
+export default TituloPrincipal;
